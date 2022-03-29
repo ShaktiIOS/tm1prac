@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" type="text/css" href="profile.css">
+</head>
+<body>
+   <div id="home">
+    <div id="navbar">
+        <h1>TOURMATE</h1>
+        <ul>
+            
+            <li><a href="">WELCOME</a></li>
+            <li><a href="">PROFILE</a></li>
+            <li><a href="/find">FIND A MATCH</a></li>
+            <li><a href="">ABOUT</a></li>
+            <li><a href="">CONTACTS</a></li>
+            <li><a href="/logout">LOGOUT</a></li>
+        </ul>
+     </div> 
+
+     <div id="form-section">
+        <div>
+        <h1>Profile</h1>
+        </div>
+        <!-- <div id="myform"> -->
+            <form id="myform" action="/profile" method="GET">
+        
+            <div>
+           <label>Name:</label>
+           <label id="name"><%= name %></label>
+           
+            </div>
+         
+           <div>
+           <label> Gender:</label>
+           <label id="gender"><%= gender %></label>
+         
+             </div>
+             <div>
+            <label>  DOB:</label>
+            <label id="dob"><%= dob %></label>
+             
+             </div>
+             <div>
+            <label>  Age:</label>
+            <label id="age"><%= age %></label>
+             
+             </div>
+             <div>
+            <label> Phone No:</label>
+            <label id="phno"><%= phno %></label>
+             
+             </div>
+          
+             <div>
+            <label> Email Id:</label>
+            <label id="email"><%= email %></label>
+            
+            </div>
+        
+         
+            <div>
+           <label>State</label>
+           <label id="state"><%= state %></label>
+        
+           </div>
+
+            <div>
+           <label>City</label>
+           <label id="city"><%= city %></label>
+        
+           </div>
+           <div>
+           <button class="bt" id="btn">EXIT</button>
+           </div>
+        
+            </form>
+        <!-- </div> -->
+        
+    </div>
+    
+    
+</div>
+
+ <footer>
+    <div class="center">
+        Copyright &copy;www.TourMate.com. All rights reserved.
+     </div>
+</footer>
+    
+</body>
+</html>

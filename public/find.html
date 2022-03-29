@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find a Match</title>
+    <link rel="stylesheet" type="text/css" href="find.css">
+</head>
+<body>
+   <div id="home">
+    <div id="navbar">
+        <h1>TOURMATE</h1>
+        <ul>
+            
+            <li><a href="/welcome">WELCOME</a></li>
+            <li><a href="/profile">PROFILE</a></li>
+            <li><a href="/find">FIND</a></li>
+            <li><a href="/about">ABOUT</a></li>
+            <li><a href="/contacts">CONTACTS</a></li>
+        </ul>
+     </div> 
+
+     <div id="form-section">
+        <div>
+        <h1>Find a Match</h1>
+        </div>
+     <form id="myform" action="/find" method="POST">
+
+          <div>
+         <label>State</label>
+         <input type="text" class="my" name="state" id="state" placeholder="Enter Your Partner's State">
+          </div>
+
+          <div>
+         <label>City</label>
+         <input type="text" class="my" name="city" id="city" placeholder="Enter Your Partner's City">
+          </div>
+    
+         <div>
+         <label> Gender</label>
+          <select name="gender" id="gender">
+         <option>Select Gender</option>
+         <option>Male</option>
+         <option>Female</option>
+         <option>Others</option>
+          </select>
+           </div>
+           <div>
+           <label> Age</label>
+           <select name="age" id="age">
+          <option>Age</option>
+          <option>18-30</option>
+          <option>31-50</option>
+          <option>51-70</option>
+           </select>
+            </div>
+        
+         
+           
+         
+       
+         
+         <div>
+         <button class="bt" id="btn">Cancel</button>
+         <button class="bt" id="btn1">Search</button>
+         </div>
+    </form>
+    </div>
+    
+    
+</div>
+
+<footer>
+    <div class="center">
+        Copyright &copy;www.TourMate.com. All rights reserved.
+    </div>
+</footer>
+    
+</body>
+</html>

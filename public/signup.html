@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <link rel="stylesheet" type="text/css" href="signup.css">
+</head>
+<body>
+   <div id="home">
+    <div id="navbar">
+        <h1>TOURMATE</h1>
+        <ul>
+            
+            <li><a href="">WELCOME</a></li>
+            
+            <li><a href="">ABOUT</a></li>
+            <li><a href="">CONTACTS</a></li>
+        </ul>
+     </div> 
+
+     <div id="form-section">
+        <div>
+        <h1>Sign Up</h1>
+        </div>
+     <form id="myform" action="/signup" method="POST">
+
+          <div>
+         <label> Name</label>
+         <input type="text" class="my" id="fname" name="name" placeholder="Enter Your  Name">
+          </div>
+         
+         <div>
+         <label> Gender</label>
+          <select name="gender" id="gender">
+         <option>Select Gender </option>
+         <option>Male</option>
+         <option>Female</option>
+         <option>Others</option>
+          </select>
+           </div>
+           <div>
+          <label>  DOB</label>
+           <input type="Date" name="date" class="my" id="date">
+           </div>
+           <div>
+          <label> Age</label>
+           <input type="Number" name="age" class="my" id="age">
+           </div>
+           <div>
+            <label> Phone no</label>
+             <input type="Number" name="phone" class="my" id="phn">
+             </div>
+     
+           <div>
+          <label> Username</label>
+          <input type="text" name="username" class="my" id="username">
+          </div>
+           <div>
+          <label> Password</label>
+          <input type="password" name="password" class="my" id="password">
+          </div>
+          <div>
+         <label> Confirm Password</label>
+          <input type="password" name="cpassword" class="my" id="cpassword">
+          </div>
+          <div>
+         <label> State</label>
+         <input type="text" name="state" class="my" id="state">
+         </div>
+          <div>
+         <label> City</label>
+         <input type="text" name="city" class="my" id="city">
+         </div>
+         <div>
+         <button class="bt" id="btn">Cancel</button>
+         <button class="bt" id="btn1">Confirm</button>
+         </div>
+         <div>
+            <p>Already have an account? <a href="signin.html">Sign In</a></p>
+        </div>
+    </form>
+    </div>
+    
+    
+</div>
+
+<footer>
+    <div class="center">
+        Copyright &copy;www.TourMate.com. All rights reserved.
+    </div>
+</footer>
+    
+</body>
+</html>

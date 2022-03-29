@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friend's list</title>
+    <link rel="stylesheet" type="text/css" href="friendlist.css">
+    <script>
+          function myclick(e){
+                var click=e.textContent();
+                console.log(click);
+            }
+    </script>
+</head>
+<body>
+   <div id="home">
+    <div id="navbar">
+        <h1>TOURMATE</h1>
+        <ul>
+            
+            <li><a href="">WELCOME</a></li>
+            <li><a href="">PROFILE</a></li>
+            <li><a href="">FIND A MATCH</a></li>
+            <li><a href="">HISTORY</a></li>
+            <li><a href="">ABOUT</a></li>
+            <li><a href="">CONTACTS</a></li>
+        </ul>
+     </div> 
+
+     <div id="form-section">
+        <div>
+        <h1 class="center">Friend's list</h1>
+        </div>
+      
+     <table>
+             <tr><th>Sl.no</th><th>Names</th></tr>
+                <% for(var i=0; i< details.length;i++){ %>
+              
+                    
+                        <tr>
+                            <td><%= i+1 %></td>
+                            <td><a href="/pprofile" id="name" onclick="myclick(this)"><%= details[i].name %></a></td>
+                        </tr>
+                    
+                <% } %>
+            </table>
+           
+        
+           
+    </div>
+     
+    
+    
+</div>
+
+<footer>
+    <div class="center">
+        Copyright &copy;www.TourMate.com. All rights reserved.
+    </div>
+</footer>
+    
+</body>
+</html>
