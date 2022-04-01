@@ -5,6 +5,7 @@ const sessions=require('express-session');
 var session;
 const cookieParser=require("cookie-parser");
 const { default: axios } = require("axios");
+const res = require("express/lib/response");
 
 
 const app = express();
@@ -76,16 +77,16 @@ app.post("/signin", async(req,res)=>{
         var pas = req.body.password;
     
         const username=await db.collection('users').findOne({username:uname});
-        console.log(username);
+       // console.log(username);
         
         
       
         if(username.password === pas){
             session=req.session;
             session.userid=req.body.username;
-            console.log(req.session);
+           // console.log(req.session);
 
-            console.log(username.username);
+           // console.log(username.username);
             res.status(201).redirect("welcome.html");
         }
         else{
@@ -101,6 +102,38 @@ app.post("/signin", async(req,res)=>{
 app.get("/find",(req,res)=>{
     res.render(__dirname+"/public/find.html");
 })
+app.get("/confirm",async(req, res)=> {
+        try{
+            let username=await db.collection('users').findOne({username:uname});
+            let pprofile=await db.collection('users').findOne({name:'rajesh'});
+        res.render(__dirname + "/public/conformation.html",{
+
+      
+        
+        name:username.name,
+         gender:username.gender,
+        dob:username.dob,
+        age:username.age,
+         phno:username.phone,
+         email:username.username,
+         state:username.state,
+         city:username.city,
+
+         pname:pprofile.name,
+         pgender:pprofile.gender,
+        pdob:pprofile.dob,
+        page:pprofile.age,
+         pphno:pprofile.phone,
+         pemail:pprofile.username,
+         pstate:pprofile.state,
+         pcity:pprofile.city
+    
+    });
+  
+}catch(error){
+      res.status(400).send("No Partner availaible")
+  }
+});
 app.post("/find",(req,res,next)=>{
     
    
@@ -112,7 +145,7 @@ app.post("/find",(req,res,next)=>{
       
        
        if(age==='18-30'){
-            console.log(state,city,gender,age);
+            //console.log(state,city,gender,age);
             
         db.collection('users').find({$and:[{state:state},{city:city},{gender:gender},{age:{$gt:18,$lt:30}}]}).toArray(function(err,allDetails){
             
@@ -122,10 +155,13 @@ app.post("/find",(req,res,next)=>{
                 else{
                     res.render(__dirname + "/public/friendlist.html",{'details':allDetails});
                 }
-            }); 
+            });
+           /* function myclick(e){
+                var click=e.textContent();
+                console.log(click);*/
         }
        if(age==='31-50'){
-        console.log(state,city,gender,age);
+        //console.log(state,city,gender,age);
         db.collection('users').find({$and:[{state:state},{city:city},{gender:gender},{age:{$gt:31,$lt:50}}]}).toArray(function(err,allDetails){
             
             if(err){
@@ -135,13 +171,10 @@ app.post("/find",(req,res,next)=>{
                     res.render(__dirname + "/public/friendlist.html",{'details':allDetails});
                 }
             });
-            // function myclick(e){
-            //     var click=e.textContent();
-            //     console.log(click);
-            // }
+          
         }
        if(age==='51-70'){
-        console.log(state,city,gender,age);
+        //console.log(state,city,gender,age);
         db.collection('users').find({$and:[{state:state},{city:city},{gender:gender},{age:{$gt:51,$lt:70}}]}).toArray(function(err,allDetails){
             
             if(err){
@@ -153,7 +186,7 @@ app.post("/find",(req,res,next)=>{
             });
         }
        
-}) 
+    });
 app.get('/pprofile',async(req,res)=>{
    
  
