@@ -6,12 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Friend's list</title>
     <link rel="stylesheet" type="text/css" href="friendlist.css">
-    <script>
-          function myclick(e){
-                var click=e.textContent();
-                console.log(click);
-            }
-    </script>
+    <script type="text/javascript" src="value.js">
+       
+  </script>
+    
 </head>
 <body>
    <div id="home">
@@ -40,12 +38,11 @@
                     
                         <tr>
                             <td><%= i+1 %></td>
-                            <td><a href="/pprofile" id="name<%= i+1 %>" onclick="myclick(this)"><%= details[i].name %></a></td>
+                            <td><a href="#" id="name<%= i+1 %>" class = "list" name = "link"  onclick="myclick(this);return false;"><%= details[i].name %></a></td>
                         </tr>
                     
                 <% } %>
             </table>
-           
         
            
     </div>

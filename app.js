@@ -7,6 +7,9 @@ const cookieParser=require("cookie-parser");
 const { default: axios } = require("axios");
 const res = require("express/lib/response");
 
+/*const lib = require("./public/value");
+var object = lib.obj.textContent;
+console.log("hello "+object)*/
 
 const app = express();
 
@@ -36,6 +39,7 @@ var db = mongoose.connection;
 
 db.on('error',()=>console.log("Error in connecting to database"));
 db.once('open',()=>console.log("connected to database"));
+
 
 app.post("/signup",(req,res)=>{
     var name = req.body.name;
@@ -211,7 +215,8 @@ app.get('/pprofile',async(req,res)=>{
                   res.status(400).send("No Partner availaible")
               }     
                 
-})
+});
+
 
 app.get('/logout',(req,res)=>{
                 
